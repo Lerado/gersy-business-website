@@ -3,5 +3,5 @@ FROM --platform=$TARGETPLATFORM fholzer/nginx-brotli
 
 ARG TARGETPLATFORM
 
-COPY --from=build-step /app/public/ /usr/share/nginx/html
-COPY --from=build-step /app/.docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY /public/ /usr/share/nginx/html
+COPY /.docker/nginx.conf /etc/nginx/conf.d/default.conf
